@@ -17,6 +17,7 @@
     <script type="text/javascript" src="blockly_smartibot.js"></script>
     <script type="text/javascript" src="blockly_bangle.js"></script>
     <script type="text/javascript" src="field_textarea.js"></script>
+    <script type="text/javascript" src="../js/libs/imageconverter.js"></script>
     <style>
       html, body {
         background-color: #fff;
@@ -323,6 +324,8 @@
     <category name="Graphics" disable_if="smartibot">
       <block type="gfx_clear">
       </block>
+      <block type="gfx_flip">
+      </block>
       <block type="gfx_setFont">
         <value name="SIZE"><block type="math_number"><title name="NUM">2</title></block></value>
       </block>
@@ -349,6 +352,10 @@
         <value name="X2"><block type="math_number"><title name="NUM">40</title></block></value>
         <value name="Y2"><block type="math_number"><title name="NUM">40</title></block></value>
       </block>
+      <block type="gfx_image">
+        <value name="X"><block type="math_number"><title name="NUM">20</title></block></value>
+        <value name="Y"><block type="math_number"><title name="NUM">20</title></block></value>
+      </block>
     </category>
     <category name="Menus" disable_if="smartibot">
       <block type="menu_message">
@@ -362,7 +369,7 @@
       </block>
     </category>
     <!-- Bangle.js -->
-    <category name="Bangle.js">
+    <category name="Bangle.js" disable_if="smartibot">
       <block type="bangle_beep"></block>
       <block type="bangle_buzz"></block>
       <block type="bangle_turnon"></block>
